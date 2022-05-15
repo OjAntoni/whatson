@@ -14,8 +14,9 @@ import java.time.LocalDateTime;
 @Document(collection = "users")
 @ToString
 public class User {
+    @Id @AttrCopyExclude
+    private String id;
     private String name;
-    @Id
     private String username;
     private String phone;
     private String email;

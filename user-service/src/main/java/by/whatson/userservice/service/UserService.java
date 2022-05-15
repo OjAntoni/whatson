@@ -37,7 +37,6 @@ public class UserService {
         }
         try {
             new AttrCopy().copyAttributes(user, userByToken_value);
-            userRepository.deleteByToken_Value(uuid.toString());
             userRepository.save(userByToken_value);
             return true;
         } catch (IllegalAccessException e) {
