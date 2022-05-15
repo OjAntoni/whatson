@@ -7,12 +7,20 @@ import javax.validation.constraints.*;
 
 @Data
 public class RegistrationRequestDto {
-    @NotBlank @NotEmpty @NotNull @Length(min = 3, max = 20)
+    @NotBlank(groups = {RegRequestMainGroup.class})
+    @NotEmpty(groups = {RegRequestMainGroup.class})
+    @NotNull(groups = {RegRequestMainGroup.class})
+    @Length(min = 3, max = 20, groups = {RegRequestMainGroup.class, RegRequestSettingsGroup.class})
     private String name;
-    @NotBlank @NotEmpty @NotNull @Length(min = 6, max = 15)
+    @NotBlank(groups = {RegRequestMainGroup.class})
+    @NotEmpty(groups = {RegRequestMainGroup.class})
+    @NotNull(groups = {RegRequestMainGroup.class})
+    @Length(min = 6, max = 15, groups = {RegRequestMainGroup.class, RegRequestSettingsGroup.class})
     private String username;
-    @Email
+    @NotNull(groups = {RegRequestMainGroup.class})
+    @Email(groups = {RegRequestMainGroup.class, RegRequestSettingsGroup.class})
     private String email;
-    @Pattern(regexp = "/+[1-9]*")
+    @Pattern(regexp = "(?:\\(\\d{3}\\)|\\d{3}[-]*)\\d{3}[-]*\\d{4}",
+            groups = {RegRequestMainGroup.class, RegRequestSettingsGroup.class})
     private String phone;
 }

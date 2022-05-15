@@ -16,7 +16,7 @@ public class AttrCopy {
             Field ff = toFieldNameMap.get(f.getName());
             f.setAccessible(true);
             boolean include = f.getDeclaredAnnotation(AttrCopyExclude.class) == null;
-            if(include && ff != null && ff.getType().equals(f.getType())) {
+            if(include && ff != null && ff.getType().equals(f.getType()) && f.get(from)!=null) {
                 ff.setAccessible(true);
                 ff.set(to, f.get(from));
             }

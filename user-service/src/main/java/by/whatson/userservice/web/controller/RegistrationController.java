@@ -3,6 +3,7 @@ package by.whatson.userservice.web.controller;
 import by.whatson.userservice.mapper.TokenMapper;
 import by.whatson.userservice.service.UserService;
 import by.whatson.userservice.service.UserValidationService;
+import by.whatson.userservice.web.dto.RegRequestMainGroup;
 import by.whatson.web.ErrorResponse;
 import by.whatson.userservice.web.dto.RegistrationRequestDto;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/reg")
-    public ResponseEntity<?> register(@RequestBody @Validated RegistrationRequestDto regDto,
+    public ResponseEntity<?> register(@RequestBody @Validated(RegRequestMainGroup.class) RegistrationRequestDto regDto,
                                                      BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<>(
