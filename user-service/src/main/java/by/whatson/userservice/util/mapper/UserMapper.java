@@ -1,4 +1,4 @@
-package by.whatson.userservice.mapper;
+package by.whatson.userservice.util.mapper;
 
 import by.whatson.domain.User;
 import by.whatson.userservice.web.dto.RegistrationRequestDto;

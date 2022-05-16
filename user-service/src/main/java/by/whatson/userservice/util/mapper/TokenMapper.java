@@ -1,4 +1,4 @@
-package by.whatson.userservice.mapper;
+package by.whatson.userservice.util.mapper;
 
 import by.whatson.domain.Token;
 import by.whatson.userservice.web.dto.TokenResponseDto;

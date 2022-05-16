@@ -2,7 +2,7 @@ package by.whatson.userservice.service;
 
 import by.whatson.domain.Token;
 import by.whatson.domain.User;
-import by.whatson.userservice.mapper.UserMapper;
+import by.whatson.userservice.util.mapper.UserMapper;
 import by.whatson.userservice.repository.UserRepository;
 import by.whatson.userservice.web.dto.RegistrationRequestDto;
 import by.whatson.util.helper.AttrCopy;

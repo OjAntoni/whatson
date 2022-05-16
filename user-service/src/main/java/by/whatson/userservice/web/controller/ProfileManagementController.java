@@ -1,9 +1,9 @@
 package by.whatson.userservice.web.controller;
 
 import by.whatson.domain.User;
-import by.whatson.userservice.mapper.UserMapper;
+import by.whatson.userservice.util.mapper.UserMapper;
 import by.whatson.userservice.service.UserService;
-import by.whatson.userservice.web.dto.RegRequestSettingsGroup;
+import by.whatson.userservice.util.validation.RegRequestSettingsGroup;
 import by.whatson.userservice.web.dto.UserSettingsRequestDto;
 import by.whatson.web.ErrorResponse;
 import org.springframework.http.HttpStatus;
