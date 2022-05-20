@@ -7,25 +7,27 @@
         <groupId>by.whatson</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>MailScheduler</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>mailing-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MailScheduler</name>
-    <description>MailScheduler</description>
+    <name>mailing-service</name>
+    <description>mailing-service</description>
     <properties>
         <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <artifactId>spring-boot-starter-activemq</artifactId>
         </dependency>
         <dependency>
-            <groupId>by.whatson</groupId>
-            <artifactId>news-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>

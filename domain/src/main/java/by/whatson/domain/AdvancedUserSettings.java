@@ -8,5 +8,5 @@ import java.util.List;
 @Data @Builder
 public class AdvancedUserSettings {
     private boolean mailing;
-    List<String> newsAgencies;
+    List<String> languages;
 }

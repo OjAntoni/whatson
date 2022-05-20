@@ -1,4 +1,4 @@
-package by.whatson.mailscheduler.entity;
+package by.whatson.domain;
 
 import lombok.Data;
 

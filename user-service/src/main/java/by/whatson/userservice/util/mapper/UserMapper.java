@@ -11,6 +11,6 @@ import org.mapstruct.Mappings;
 public interface UserMapper {
     User mapRegistrationReqDtoToUser(RegistrationRequestDto dto);
     @Mappings({@Mapping(source = "mailing", target = "settings.mailing"),
-               @Mapping(source = "newsAgencies", target = "settings.newsAgencies")})
+               @Mapping(source = "languages", target = "settings.languages")})
     User mapUserSettingsReqDtoToUser(UserSettingsRequestDto dto);
 }

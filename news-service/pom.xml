@@ -3,21 +3,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>news-common</artifactId>
+        <artifactId>domain</artifactId>
         <groupId>by.whatson</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>MailScheduler</artifactId>
+    <artifactId>news-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MailScheduler</name>
-    <description>MailScheduler</description>
+    <name>news-service</name>
+    <description>news-service</description>
     <properties>
         <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>by.whatson</groupId>
+            <artifactId>domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>by.whatson</groupId>
@@ -26,6 +32,7 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>

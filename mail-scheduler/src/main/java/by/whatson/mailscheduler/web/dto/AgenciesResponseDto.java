@@ -1,6 +1,7 @@
 package by.whatson.mailscheduler.web.dto;
 
-import by.whatson.mailscheduler.entity.Agency;
+
+import by.whatson.domain.Agency;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 

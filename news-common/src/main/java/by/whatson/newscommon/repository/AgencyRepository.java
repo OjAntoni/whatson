@@ -1,6 +1,7 @@
-package by.whatson.mailscheduler.repository;
+package by.whatson.newscommon.repository;
 
-import by.whatson.mailscheduler.entity.Agency;
+
+import by.whatson.domain.Agency;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 
