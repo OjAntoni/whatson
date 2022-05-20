@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>domain</artifactId>
+        <artifactId>maven-parent</artifactId>
         <groupId>by.whatson</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -22,12 +22,6 @@
         <dependency>
             <groupId>by.whatson</groupId>
             <artifactId>domain</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>by.whatson</groupId>
-            <artifactId>news-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

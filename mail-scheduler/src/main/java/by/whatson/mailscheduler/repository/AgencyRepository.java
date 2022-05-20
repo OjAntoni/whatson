@@ -1,4 +1,4 @@
-package by.whatson.newscommon.repository;
+package by.whatson.mailscheduler.repository;
 
 
 import by.whatson.domain.Agency;

@@ -2,8 +2,8 @@ package by.whatson.mailscheduler.web.scheduler;
 
 
 import by.whatson.domain.Article;
+import by.whatson.mailscheduler.repository.ArticleRepository;
 import by.whatson.mailscheduler.web.client.NewsClient;
-import by.whatson.newscommon.repository.ArticleRepository;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

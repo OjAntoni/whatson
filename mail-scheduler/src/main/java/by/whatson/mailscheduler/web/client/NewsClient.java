@@ -1,9 +1,10 @@
 package by.whatson.mailscheduler.web.client;
+
+
 import by.whatson.domain.Agency;
 import by.whatson.domain.Article;
-
+import by.whatson.mailscheduler.repository.AgencyRepository;
 import by.whatson.mailscheduler.web.dto.ArticlesResponseDto;
-import by.whatson.newscommon.repository.AgencyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
