@@ -19,4 +19,5 @@ public class Article {
     private String urlToImage;
     private LocalDateTime publishedAt;
     private String content;
+    private String language;
 }
