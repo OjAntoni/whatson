@@ -54,4 +54,5 @@ public class NewsGetter {
         LocalTime now = LocalTime.now();
         return now.getHour()==20 && now.getMinute()<=2;
     }
+
 }
