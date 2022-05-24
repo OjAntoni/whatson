@@ -6,6 +6,7 @@ import by.whatson.domain.Article;
 import by.whatson.domain.Source;
 import by.whatson.newsservice.repository.AgencyRepository;
 import by.whatson.newsservice.repository.ArticleRepository;
+import by.whatson.newsservice.repository.DailyMailRepository;
 import by.whatson.newsservice.util.mapper.AgencyMapper;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -13,8 +14,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -22,11 +24,13 @@ public class NewsService {
     private final ArticleRepository articleRepository;
     private final AgencyRepository agencyRepository;
     private final AgencyMapper agencyMapper;
+    private final DailyMailRepository dailyMailRepository;
 
-    public NewsService(ArticleRepository articleRepository, AgencyRepository agencyRepository, AgencyMapper mapper) {
+    public NewsService(ArticleRepository articleRepository, AgencyRepository agencyRepository, AgencyMapper mapper, DailyMailRepository dailyMailRepository) {
         this.articleRepository = articleRepository;
         this.agencyRepository = agencyRepository;
         this.agencyMapper = mapper;
+        this.dailyMailRepository = dailyMailRepository;
     }
 
     public List<Article> getAllArticles(LocalDateTime from, int pageSize, int page){
@@ -91,5 +95,20 @@ public class NewsService {
     public List<Source> getSources(String language){
         List<Agency> agencies = agencyRepository.getAllByLanguage(language);
         return agencies.stream().map(agencyMapper::mapAgencyToSource).collect(Collectors.toList());
+    }
+
+    public List<Article> getAllForDailyMail(String language){
+        return  dailyMailRepository.getAll(language);
+    }
+
+    public List<Article> getRandomForDailyMail(String language, int items){
+        List<Article> all = dailyMailRepository.getAll(language);
+        List<Article> toReturn = new ArrayList<>(items);
+        Random r = new Random();
+        items = Math.min(items, all.size());
+        for (int i = 0; i < items; i++) {
+            toReturn.add(all.remove(r.nextInt(all.size())));
+        }
+        return toReturn;
     }
 }
