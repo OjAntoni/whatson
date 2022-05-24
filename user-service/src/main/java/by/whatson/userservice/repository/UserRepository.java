@@ -1,6 +1,7 @@
 package by.whatson.userservice.repository;
 
 import by.whatson.domain.User;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +16,5 @@ public interface UserRepository extends MongoRepository<User, UUID> {
     User getUserByToken_Value(String uuid);
     List<User> getAllByToken_ValueOrderByRegistrationTimeDesc(String uuid);
     void deleteByToken_Value(String uuid);
+    List<User> getAllBySettings_Mailing(boolean areMailed, Pageable pageable);
 }

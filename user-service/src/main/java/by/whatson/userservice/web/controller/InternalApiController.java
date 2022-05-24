@@ -26,8 +26,8 @@ public class InternalApiController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<?> getAllUsers(@RequestParam int page, @RequestParam int size){
-        List<User> allUsers = userApiService.getAllUsers(page, size);
+    public ResponseEntity<?> getAllUsers(@RequestParam int page, @RequestParam int size, @RequestParam(required = false, defaultValue = "false") boolean mailedOnly){
+        List<User> allUsers = mailedOnly ? userApiService.getAllMailedUsers(page, size) : userApiService.getAllUsers(page, size);
         List<UserResponseDto> ures = allUsers.stream().map(userMapper::mapUserToUserRespDto).collect(Collectors.toList());
         return new ResponseEntity<>(ures, HttpStatus.OK);
     }

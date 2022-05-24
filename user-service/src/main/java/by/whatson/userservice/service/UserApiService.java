@@ -18,4 +18,8 @@ public class UserApiService {
     public List<User> getAllUsers(int page, int size){
         return (page>=0 && size>0) ? userRepository.findAll(PageRequest.of(page, size)).getContent() : List.of();
     }
+
+    public List<User> getAllMailedUsers(int page, int size){
+        return (page>=0 && size>0) ? userRepository.getAllBySettings_Mailing(true, PageRequest.of(page, size)) : List.of();
+    }
 }
