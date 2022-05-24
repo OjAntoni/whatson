@@ -2,6 +2,7 @@ package by.whatson.userservice.util.mapper;
 
 import by.whatson.domain.User;
 import by.whatson.userservice.web.dto.RegistrationRequestDto;
+import by.whatson.userservice.web.dto.UserResponseDto;
 import by.whatson.userservice.web.dto.UserSettingsRequestDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -13,4 +14,6 @@ public interface UserMapper {
     @Mappings({@Mapping(source = "mailing", target = "settings.mailing"),
                @Mapping(source = "languages", target = "settings.languages")})
     User mapUserSettingsReqDtoToUser(UserSettingsRequestDto dto);
+    @Mappings({@Mapping(source = "settings.languages", target = "languages")})
+    UserResponseDto mapUserToUserRespDto(User user);
 }
