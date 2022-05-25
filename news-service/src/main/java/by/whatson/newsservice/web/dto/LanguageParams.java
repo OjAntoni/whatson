@@ -1,4 +1,4 @@
-package by.whatson.newsservice.web.controller;
+package by.whatson.newsservice.web.dto;
 
 import java.util.Arrays;
 import java.util.List;

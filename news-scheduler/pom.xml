@@ -7,10 +7,10 @@
         <groupId>by.whatson</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>MailScheduler</artifactId>
+    <artifactId>news-scheduler</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>MailScheduler</name>
-    <description>MailScheduler</description>
+    <name>news-scheduler</name>
+    <description>NewsScheduler</description>
     <properties>
         <java.version>11</java.version>
     </properties>

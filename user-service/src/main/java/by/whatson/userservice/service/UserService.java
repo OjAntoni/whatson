@@ -44,6 +44,10 @@ public class UserService {
         }
     }
 
+    public User getUser(UUID uuid){
+        return userRepository.getUserByToken_Value(uuid.toString());
+    }
+
     public boolean userExists(UUID token){
         return userRepository.getUserByToken_Value(token.toString()) != null;
     }

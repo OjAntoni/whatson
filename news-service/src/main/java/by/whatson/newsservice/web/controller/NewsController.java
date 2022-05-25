@@ -1,8 +1,8 @@
-package by.whatson.newsservice.web.dto;
+package by.whatson.newsservice.web.controller;
 
 import by.whatson.domain.Article;
 import by.whatson.newsservice.service.NewsService;
-import by.whatson.newsservice.web.controller.LanguageParams;
+import by.whatson.newsservice.web.dto.LanguageParams;
 import by.whatson.web.ErrorResponse;
 import by.whatson.web.dto.NewsResponseDto;
 import org.springframework.format.annotation.DateTimeFormat;

@@ -3,6 +3,7 @@ package by.whatson.util.helper;
 import by.whatson.util.annotation.AttrCopyExclude;
 
 import java.lang.reflect.Field;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
