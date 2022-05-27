@@ -1,4 +1,4 @@
-package com.example.mailingservice.web.dto;
+package by.whatson.web.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

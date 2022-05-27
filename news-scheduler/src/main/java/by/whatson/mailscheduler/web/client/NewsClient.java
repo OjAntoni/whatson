@@ -23,7 +23,7 @@ public class NewsClient {
 
     private final String URL="https://newsapi.org";
     private final String AGENCIES_ENDPOINT="/v2/top-headlines/sources";
-    private final String API_KEY="a0556e8158344ab38db6c9176e92c159";
+    private final String API_KEY="a0556e8158344ab38db6c9176e92c15";
 
     private String HTTP_REQUEST_FOR_NEWS="https://newsapi.org/v2/top-headlines?language=%s&pageSize=100&apiKey=%s";
 

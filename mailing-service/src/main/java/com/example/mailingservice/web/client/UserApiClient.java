@@ -1,8 +1,6 @@
 package com.example.mailingservice.web.client;
 
-import com.example.mailingservice.web.dto.UserResponseDto;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import by.whatson.web.dto.UserResponseDto;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,7 +9,7 @@ import java.util.List;
 
 @Component
 public class UserApiClient {
-    private final int pageSize = 5;
+    private final int pageSize = 10;
 
 //    public UserApiClient(@Autowired(required = false) int pageSize) {
 //        this.pageSize = pageSize;

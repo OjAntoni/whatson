@@ -1,6 +1,7 @@
 package by.whatson.domain;
 
 import lombok.Data;
+import lombok.ToString;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.example.mailingservice.web.dto;
+package by.whatson.web.dto;
 
 import by.whatson.domain.Article;
 import lombok.Data;

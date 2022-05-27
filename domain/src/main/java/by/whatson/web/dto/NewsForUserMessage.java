@@ -1,7 +1,7 @@
-package com.example.mailingservice.scheduler;
+package by.whatson.web.dto;
 
 import by.whatson.domain.Article;
-import com.example.mailingservice.web.dto.UserResponseDto;
+import by.whatson.web.dto.UserResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

@@ -1,15 +1,15 @@
 package com.example.mailingservice.scheduler;
 
 import by.whatson.domain.Article;
+import by.whatson.web.dto.NewsForUserMessage;
 import com.example.mailingservice.web.client.NewsApiClient;
 import com.example.mailingservice.web.client.UserApiClient;
-import com.example.mailingservice.web.dto.UserResponseDto;
+import by.whatson.web.dto.UserResponseDto;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,7 @@ public class MailScheduledSender{
         this.jmsTemplate = jmsTemplate;
     }
 
-    @Scheduled(cron = "0 2 20 * * *")
+    @Scheduled(cron = "0 5 20 * * *")
     public void sendNewsForUserToQueue(){
         articlesMap.put("ru", newsApiClient.getDailyMail(List.of("ru"), 5));
         articlesMap.put("en", newsApiClient.getDailyMail(List.of("en"), 5));

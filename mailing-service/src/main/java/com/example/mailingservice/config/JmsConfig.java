@@ -18,9 +18,9 @@ import javax.jms.ConnectionFactory;
 @EnableJms
 public class JmsConfig {
 
-    String BROKER_URL = "tcp://localhost:61616";
-    String BROKER_USERNAME = "admin";
-    String BROKER_PASSWORD = "admin";
+    String BROKER_URL = "tcp://localhost:61618";
+    String BROKER_USERNAME = "?";
+    String BROKER_PASSWORD = "?";
 
     @Bean
     public ActiveMQConnectionFactory connectionFactory(){
@@ -28,6 +28,7 @@ public class JmsConfig {
         connectionFactory.setBrokerURL(BROKER_URL);
         connectionFactory.setPassword(BROKER_USERNAME);
         connectionFactory.setUserName(BROKER_PASSWORD);
+        connectionFactory.setTrustAllPackages(true);
         return connectionFactory;
     }
 
@@ -38,11 +39,11 @@ public class JmsConfig {
         return template;
     }
 
-    @Bean
-    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
-        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-        factory.setConnectionFactory(connectionFactory());
-        factory.setConcurrency("1-1");
-        return factory;
-    }
+//    @Bean
+//    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
+//        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+//        factory.setConnectionFactory(connectionFactory());
+//        factory.setConcurrency("1-1");
+//        return factory;
+//    }
 }

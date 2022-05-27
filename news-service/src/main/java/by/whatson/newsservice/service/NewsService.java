@@ -102,7 +102,10 @@ public class NewsService {
     }
 
     public List<Article> getRandomForDailyMail(String language, int items){
-        List<Article> all = dailyMailRepository.getAll(language);
+        List<Article> all = dailyMailRepository.getAll(language)
+                .stream()
+                .filter(a -> a.getTitle()!=null)
+                .collect(Collectors.toList());
         List<Article> toReturn = new ArrayList<>(items);
         Random r = new Random();
         items = Math.min(items, all.size());
