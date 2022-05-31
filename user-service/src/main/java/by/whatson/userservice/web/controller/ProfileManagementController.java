@@ -42,8 +42,9 @@ public class ProfileManagementController {
         if (!userService.userExists(token)){
             return new ResponseEntity<>(new ErrorResponse(List.of("Token is invalid")), HttpStatus.BAD_REQUEST);
         }
-        if (dto.getLanguages()==null) {
-            dto.setLanguages(userService.getUser(token).getSettings().getLanguages());
+        User user = userService.getUser(token);
+        if (dto.getLanguages()==null && user.getSettings()!=null) {
+            dto.setLanguages(user.getSettings().getLanguages());
         }
         User userWithNewSettings = userMapper.mapUserSettingsReqDtoToUser(dto);
         if (userService.updateUser(token, userWithNewSettings)) {
