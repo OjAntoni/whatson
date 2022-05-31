@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: mailing-service
+  cloud:
+    consul:
+      config:
+        enabled: false
+
+

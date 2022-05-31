@@ -11,9 +11,7 @@ public class MailSchedulerApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(MailSchedulerApplication.class, args);
-//        NewsClient newsClient = new NewsClient();
-//        newsClient.setAgencyRepository(run.getBean(AgencyRepository.class));
-//        System.out.println(newsClient.getAllAvailableAgencies());
+
     }
 
 }

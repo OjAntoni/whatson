@@ -3,12 +3,18 @@ package by.whatson.userservice.web.dto;
 import by.whatson.userservice.util.validation.RegRequestMainGroup;
 import by.whatson.userservice.util.validation.RegRequestSettingsGroup;
 import by.whatson.userservice.util.validation.UserValidationMessages;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.*;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class RegistrationRequestDto {
     @NotBlank(groups = {RegRequestMainGroup.class})
     @NotEmpty(groups = {RegRequestMainGroup.class})

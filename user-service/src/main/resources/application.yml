@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    consul:
+      config:
+        enabled: false
+
+

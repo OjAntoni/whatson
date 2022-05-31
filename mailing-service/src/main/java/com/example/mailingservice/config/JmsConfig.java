@@ -1,29 +1,25 @@
 package com.example.mailingservice.config;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
-import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
-import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
-import org.springframework.jms.support.converter.MessageConverter;
-import org.springframework.jms.support.converter.MessageType;
-
-import javax.jms.ConnectionFactory;
 
 @Configuration
 @EnableJms
 public class JmsConfig {
 
-    String BROKER_URL = "tcp://localhost:61618";
-    String BROKER_USERNAME = "?";
-    String BROKER_PASSWORD = "?";
+    @Value("${spring.activemq.broker-url}")
+    String BROKER_URL;
+    @Value("${spring.activemq.user}")
+    String BROKER_USERNAME;
+    @Value("${spring.activemq.password}")
+    String BROKER_PASSWORD;
 
     @Bean
-    public ActiveMQConnectionFactory connectionFactory(){
+    public ActiveMQConnectionFactory connectionFactory() {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory();
         connectionFactory.setBrokerURL(BROKER_URL);
         connectionFactory.setPassword(BROKER_USERNAME);
@@ -33,17 +29,9 @@ public class JmsConfig {
     }
 
     @Bean
-    public JmsTemplate jmsTemplate(){
+    public JmsTemplate jmsTemplate() {
         JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory());
         return template;
     }
-
-//    @Bean
-//    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
-//        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-//        factory.setConnectionFactory(connectionFactory());
-//        factory.setConcurrency("1-1");
-//        return factory;
-//    }
 }

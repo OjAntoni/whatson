@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: news-scheduler
+  cloud:
+    consul:
+      config:
+        enabled: false
+
+

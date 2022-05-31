@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: news-service
+  cloud:
+    consul:
+      config:
+        enabled: false
+
+

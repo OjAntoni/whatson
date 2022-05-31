@@ -6,11 +6,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+@EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = {"by.whatson.userservice"})
 @EnableMongoRepositories
 @EnableMongoAuditing
@@ -23,6 +26,5 @@ public class UserServiceApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        userRepository.deleteAll();
     }
 }
